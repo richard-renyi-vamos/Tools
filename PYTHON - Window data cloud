@@ -1,0 +1,22 @@
+import pygetwindow as gw
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+# Get a list of open windows
+open_windows = [window.title for window in gw.getWindowsWithTitle('')]
+
+# Combine window titles into a single string
+window_titles_text = ' '.join(open_windows)
+
+# Create a word cloud from the window titles
+wordcloud = WordCloud(width=800, height=400, background_color='white').generate(window_titles_text)
+
+# Display the word cloud
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
+plt.show()
+
+# CREATED WITH THE HELP OF OPEN-AI CHAT GPT: https://chat.openai.com/chat
+
+# PYTHON - Window data cloud
